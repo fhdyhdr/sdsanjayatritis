@@ -1,0 +1,318 @@
+/* RESET RULES & HELPER CLASSES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --lightblue: #f6f9fc;
+  --blue: #4068d6;
+}
+
+a,
+a:hover {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.bg-lightblue {
+  background: var(--lightblue);
+}
+
+.bg-red {
+  background: var(--blue);
+}
+
+.text-red {
+  color: var(--blue);
+}
+
+.container-fluid-max {
+  max-width: 1440px;
+}
+
+.cover {
+  background: no-repeat center/cover;
+}
+
+.p-15 {
+  padding: 15px;
+}
+
+/* SCROLL ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.scroll .page-header {
+  background: var(--blue);
+}
+
+.scroll .hero {
+  transform: scale(0.98);
+}
+
+/* HEADER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-header {
+  transition: background 0.5s ease-in-out;
+
+}
+
+.page-header .navbar {
+  padding: 1rem 0;
+  
+}
+
+.page-header .navbar-toggler {
+  /* the variable is inherited from BS4 built-in variables */
+  border-color: var(--white); 
+}
+
+/* BANNER SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.hero {
+  background-attachment: scroll;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.3) 0,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.hero .container-fluid {
+  z-index: 10;
+}
+
+/* POPULAR DESTINATIONS SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.popular-destinations figure {
+  margin-bottom: 30px;
+}
+
+.popular-destinations figcaption {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.popular-destinations img {
+  filter: grayscale(50%) blur(3px);
+  transition: transform 0.5s, filter 0.75s;
+}
+
+.popular-destinations a:hover img {
+  transform: scale(1.25);
+  filter: none;
+}
+
+/* PAGE FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-footer .footer-links {
+  text-align: right;
+}
+
+/* MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* MEDIUM SCREENS */
+@media screen and (max-width: 991px) {
+  .page-header {
+    background: var(--blue);
+  }
+
+  
+}
+
+@media screen and (min-width: 991px) {
+
+  .nav-page {
+    margin-left: 12px;
+  }
+  
+}
+
+
+/* SMALL SCREENS */
+@media screen and (max-width: 767px) {
+  .page-footer .footer-child {
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .img2{
+    height: calc(100vw * (6 / 19)); /* Menjaga rasio 19:6 */
+    background-size: contain; /* Membuat gambar tetap sesuai skala */
+    background-repeat: no-repeat; /* Menghindari pengulangan */
+    background-position: center; /* Menempatkan gambar di tengah */
+  }
+
+  #featured-destinations .cover {
+    height: auto; /* Sesuaikan tinggi gambar dengan ukuran kolom pada layar kecil */
+    max-height: 300px; /* Tentukan tinggi maksimal untuk gambar pada layar kecil */
+  }
+}
+
+
+@media screen and (min-width: 576px) {
+
+  .img-fluid {
+    height: 300px; /* Sesuaikan sesuai kebutuhan */
+    object-fit: cover; /* Menjaga proporsi gambar */
+    width: 100%; /* Memastikan gambar mengisi seluruh lebar kolom */
+  }
+  #featured-destinations{
+    margin: 30px;
+  }
+
+  #home h1{
+      font-size: 50px;
+  }
+
+  #home p{
+    font-size: 25px;
+  }
+
+
+}
+
+
+
+
+#request-quote .fa-envelope, .fa-whatsapp{
+  font-size: 25px;
+  color: #545e7c;
+  margin: 10px;
+}
+
+
+
+
+
+.btn-map {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #808080;
+  color: #fff;
+  margin: 1em;
+}
+.btn-map:hover, .btn-map:focus {
+  color: #fff;
+  background: #333;
+}
+
+.static-img {
+  display: block;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+/* From https://codepen.io/chriscoyier/full/kycDp */
+.map-container {
+  width: 100%;
+  margin: 0 auto;
+  height: 0;
+  padding-top: 38%;
+  position: relative;
+  display: none;
+  /* Hide for small screens */
+}
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  /* had to specify height/width */
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+
+  .map-container {
+    display: block;
+  }
+
+  .static-img {
+    display: none;
+  }
+
+
+  #process p{
+    font-size: 13px;
+  }
+
+  #process .fa-solid{
+    font-size: 35px;
+    color: #4068d6;
+  }
+
+  #process h3{
+    font-size: 20px;
+  }
+
+
+  .custom-img {
+    height: 50vh; /* Sesuaikan dengan ukuran yang diinginkan */
+    background-size: contain; /* Atur agar gambar tidak terpotong */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+
+
+
+
+  #process .bg-light {
+
+    border-radius: 8px; /* Tambahkan border-radius untuk efek rounded */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Opsional: tambahkan bayangan untuk efek visual */
+  }
+  
+
+  /* Kelas khusus untuk latar belakang */
+.nav-page {
+  background-color: #b9b9b953; /* Ubah warna sesuai kebutuhan */
+  padding: 5px 10px; /* Tambahkan padding agar latar belakang lebih lebar dari teks */
+  border-radius: 5px; /* Opsional: Membuat sudut melengkung */
+  color: #fff; /* Warna teks, sesuaikan jika perlu */
+  display: inline-block; /* Pastikan hanya sepanjang teks */
+  margin-bottom: 10px;
+}
+
+.nav-links{
+  padding: 5px 0; /* Tambahkan padding agar latar belakang lebih lebar dari teks */
+  border-radius: 5px; /* Opsional: Membuat sudut melengkung */
+  color: #fff; /* Warna teks, sesuaikan jika perlu */
+  display: inline-block; /* Pastikan hanya sepanjang teks */
+  margin-top: 5px;
+}
+
+.boxfooter {
+  transition: transform 0.3s ease-in-out; /* Animasi halus */
+}
+
+.boxfooter:hover {
+  transform: scale(1.07); /* Membesar saat di-hover */
+  cursor: pointer;
+}
+
+
+body::-webkit-scrollbar {
+  display: none; /* Menyembunyikan scrollbar */
+}
+
+html {
+  scroll-behavior: smooth;
+}
